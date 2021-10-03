@@ -1,4 +1,5 @@
 # enter a postive number and find cube and square root of that number 
+#date of execution: june 15
 import math
 def pos():
     a=int(input("enter positive number"))
