@@ -1,3 +1,9 @@
+#write a csv file which stores number ,name and price 
+#read and write the contents
+#depending on the user number print the item 
+#Name:LITHIKA RAMESH
+#DOE:sep 7
+#class:12
 import csv
 
 

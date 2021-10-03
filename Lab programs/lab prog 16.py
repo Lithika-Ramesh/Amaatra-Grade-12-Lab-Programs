@@ -1,6 +1,6 @@
 #WAP to read the contents of a file and replace all space characters with #
 #27 july
-f=open("demo.txt","r")
+f=open("Lithika/demo.txt","r")
 n=" "
 while n:
     n=f.readline()

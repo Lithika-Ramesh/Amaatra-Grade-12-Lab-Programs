@@ -3,31 +3,49 @@
 # [B] createrec() and return count no of books by the given author 
 #date: 26 8  21 
 import pickle
-def createfile()
-f=open("book.dat", 'ab')
-bookNo = int(input("bookNo"))
-book_name= (input("book name"))
-author= input("author")
-price=int(input("book price"))
-rec=[bookNo,book_name,author,price]
-pickle.dump(rec,f)
-f.close 
+def createfile():
+    f = open("book.dat","ab")
+    BookNo = int (input("Book no:"))
+    BookName = input("Book name:")
+    Author = input("Authour name:")
+    Price = int(input("Book price:"))
+    rec = [BookNo,BookName,Author,Price]
+    pickle.dump(rec,f)
+    f.close()
 
-def countrec(author):
-    f=open("book.dat",'rb')
-    num=0
+def count(Authour):
+    f = open("book.dat","rb")
+    num = 0
     try:
         while True:
-            rec= pickle.load(f)
-            if author==rec[2]
-            num=num+1
-            print(rec[0],rec[1],rec[2],rec[3])
-
+            rec = pickle.load(f)
+            if Authour == rec[2]:
+                num += 1
+                for x in rec:
+                    print(x)
+            
     except:
-        fobj.close()
-        return num
-count=int(input("enter total number of books"))
-for i in range(count):
-    createfile()
-n=countrec("james")
-print("total rec", n)
+        print("No file")
+    print("Total number of books:",num)
+
+def main():
+    more_entries = True
+    while more_entries:
+        createfile()
+        if ask_if_more_entries():
+            pass
+        else:
+            break
+        def ask_if_more_entries():
+            question = input("Do you want to continue? (Y/N)")
+            if question == "Y":
+                return True
+            elif question == "N":
+                return False
+            else:
+                print("You entered a invalid response. You can only enter in Y or N. Have another chance.")
+                ans = ask_if_more_entries()
+                return ans
+    Authour = input("Enter the Authour's name whose book count I need to find:")
+    count(Authour)
+main()
